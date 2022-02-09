@@ -12,6 +12,7 @@ namespace Ecommerce.Bussines.Models
         public DateTime DataCadastro { get; set; }
         public DateTime DataSaida { get; set; }
 
+
         public void AddProduto(int quantidade)
         {
             TotalEstoque += quantidade;

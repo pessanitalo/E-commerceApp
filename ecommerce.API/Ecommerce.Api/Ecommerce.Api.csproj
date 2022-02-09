@@ -12,4 +12,9 @@
     <Folder Include="Controllers\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Ecommerce.Bussines\Ecommerce.Bussines.csproj" />
+    <ProjectReference Include="..\Ecommerce.Data\Ecommerce.Data.csproj" />
+  </ItemGroup>
+
 </Project>
