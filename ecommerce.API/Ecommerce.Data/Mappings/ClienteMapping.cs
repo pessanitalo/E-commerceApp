@@ -16,18 +16,23 @@ namespace Ecommerce.Data.Mappings
 
             builder.Property(p => p.Telefone)
                 .IsRequired()
-                .HasColumnType("varchar(11)");
+                .HasColumnType("char(11)");
 
             builder.Property(p => p.DataNascimento)
                 .IsRequired()
-                .HasColumnType("varchar(8)");
+                .HasColumnType("char(8)");
 
             builder.Property(p => p.Cpf)
                 .IsRequired()
-                .HasColumnType("varchar(11)");
+                .HasColumnType("char(11)");
+
+            builder.Property(p => p.Rg)
+                .IsRequired()
+                .HasColumnType("char(9)");
 
             builder.Property(p => p.Email)
-                .IsRequired();
+                .IsRequired()
+                .HasColumnType("varchar(50)"); 
 
             builder.ToTable("Clientes");
         }

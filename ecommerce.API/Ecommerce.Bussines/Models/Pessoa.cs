@@ -1,4 +1,6 @@
-﻿namespace Ecommerce.Bussines.Models
+﻿using System;
+
+namespace Ecommerce.Bussines.Models
 {
     public class Pessoa
     {

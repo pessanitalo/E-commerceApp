@@ -14,9 +14,20 @@ namespace Ecommerce.Data.Mappings
                 .IsRequired()
                 .HasColumnType("varchar(20)");
 
+            builder.Property(p => p.Preco)
+                .IsRequired();
+                
+
             builder.Property(p => p.Fornecedor)
                 .IsRequired()
                 .HasColumnType("varchar(30)");
+
+            builder.Property(p => p.DataCadastro)
+              .HasDefaultValueSql("GETDATE()").ValueGeneratedOnAdd();
+              
+
+            builder.Property(p => p.DataSaida)
+              .HasDefaultValueSql("GETDATE()").ValueGeneratedOnAdd();
 
 
             builder.ToTable("Produtos");

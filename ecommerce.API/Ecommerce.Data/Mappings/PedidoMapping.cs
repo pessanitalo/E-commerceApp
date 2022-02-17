@@ -8,18 +8,18 @@ namespace Ecommerce.Data.Mappings
     {
         public void Configure(EntityTypeBuilder<Pedido> builder)
         {
+            builder.ToTable("Pedidos");
             builder.HasKey(p => p.Id);
 
-            // 1 : 1 => Pedido : Cliente
+            //1 : 1 => Pedido : Cliente
             builder.HasOne(f => f.Cliente)
                 .WithOne(e => e.Pedido);
 
-            // 1 : N => Pedido : ItemsPedido
-            builder.HasMany(f => f.ItemsPedidos)
-                .WithOne(p => p.Pedido)
-                .HasForeignKey(p => p.PedidosId);
-
-            builder.ToTable("Pedidos");
+            //1 : N => Pedido : Itens
+            builder.HasMany(f => f.ItensPedidos)
+               .WithOne(f => f.Pedido)
+               .HasForeignKey(f => f.PedidoId);
+               
         }
     }
 }
