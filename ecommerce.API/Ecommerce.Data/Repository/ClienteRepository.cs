@@ -17,9 +17,11 @@ namespace Ecommerce.Data.Repository
             _dataContext = dataContext;
         }
 
-        public Task<Cliente> CreateCliente(Cliente cliente)
+        public async Task<Cliente> CreateCliente(Cliente cliente)
         {
-            throw new NotImplementedException();
+            _dataContext.Add(cliente);
+            await _dataContext.SaveChangesAsync();
+            return cliente;
         }
 
         public Cliente GetClienteById(int id)
